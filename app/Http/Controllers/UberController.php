@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\UberUser,slider,service_type,check_trip;
+use App\Models\UberUser,slider,service_type,order_request;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\URL;
+
 
 
 class UberController extends Controller
@@ -31,7 +32,7 @@ if ($validator->fails()) {
         'success' => false,
         'status' => true,
         'message' => $validator->errors()->first(),
-    ], false);
+    ], 400);
 }
 $imageData=$request->input('image');
         
@@ -44,9 +45,9 @@ $imageData=$request->input('image');
             $image = $baseUrl . '/upload' . $imageName;
         } else {
             return response()->json([
-                'status' => "false",
+                'status' => false,
                 'message' => 'Failed to save image',
-            ], false);
+            ], 400);
         }
     }
 
@@ -62,12 +63,12 @@ $imageData=$request->input('image');
 if($user == true){
   return response()->json ([
         'message' => 'register successfully!',
-        'status' => "true"
+        'status' => true
   ]);
    }else{
     return response()->json ([
         'message' => 'something went wrong',
-        'status' => 'false'
+        'status' => false
   ]);
    }
 }
@@ -97,14 +98,14 @@ public function login(Request $request)
         $id= $user->id;
         return response()->json
         ([
-            'status' => 'true',
+            'status' => true,
             'message' => 'Login Succussfully!',
             'data'=> $id,
         ]);
 }else {
     return response()->json 
     ([
-        'status' => 'false',
+        'status' => false,
         'message' => 'You are not register , please register first !'
         
     ]);
@@ -123,7 +124,7 @@ public function slider(Request $request)
     {
         return response()-> json
         ([
-        'status' => 'true',
+        'status' => true,
         'message'=>'fetched slider image',
         'data'=>$sliders,
         ]);
@@ -232,11 +233,11 @@ if(empty($service))
         'status'=>true,
         'message'=>'Succussfull',
       'data'=>$service
-     ],400);
+     ],200);
 }
 }
 
-// Check Trip Api 
+// ride_request 
 public function ride_request(Request $request)
 {
    $validator= Validator::make($request->all(),
@@ -256,7 +257,7 @@ public function ride_request(Request $request)
    {
        return response()->json([
            'succuss'=> false,
-           'status'=> 'true',
+           'status'=> true,
            'message'=>$validator->errors()->first(),
            ],400);
    }
