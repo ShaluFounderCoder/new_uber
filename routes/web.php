@@ -1,16 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UbeController;
+use App\Http\Controllers\AdminController;
 
 
 
-Route::get('/index', [UbeController::class, 'index'])->name('index');
-Route::get('/login', [UbeController::class, 'login'])->name('login');
-Route::post('/store', [UbeController::class, 'store'])->name('store');
-// user-route
-Route::get('/user',[UbeController::class, 'user'])->name('user');
-Route::get('/slider',[UbeController::class, 'slider'])->name('slider');
+Route::get('/index', [AdminController::class, 'index'])->name('index');
+Route::get('/login', [AdminController::class, 'login'])->name('login');
+Route::post('/store', [AdminController::class, 'store'])->name('store');
+Route::get('/user',[AdminController::class, 'user'])->name('user');
+Route::get('/driver',[AdminController::class,'driver'])->name('driver');
+Route::get('/booking',[AdminController::class,'booking'])->name('booking');
+Route::post('/slider',[AdminController::class, 'slider'])->name('slider');
+
+
+
+
+
+
 
 
 

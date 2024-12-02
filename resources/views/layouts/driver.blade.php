@@ -3,18 +3,10 @@
 <body>
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>User Tables</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="breadcrumb-item">Tables</li>
-                    <li class="breadcrumb-item active">Data</li>
-                </ol>
-            </nav>
+            <h1>Driver Details</h1>
+            
         </div>
-        <!-- End Page Title -->
+      
 
         <section class="section">
       <div class="row">
@@ -22,9 +14,9 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Default Table</h5>
+           
 
-              <!-- Default Table -->
+          
               <table class="table">
                 <thead>
                   <tr>
@@ -33,7 +25,8 @@
                     <th scope="col">Last_name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Mobile</th>
-                    <th scope="col">Txn History</th>
+                    <th scope="col">Document</th>
+                    <th scope="col">Vehicle Details</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -46,7 +39,8 @@
                     <td>abc@gmail.com</td>
                     <td>123456789</td>
                     <td>100.00</td>
-                    <td>asdf</td>
+                    <td>pdf</td>
+                    <td>0</td>
                     <td><a href="#">Edit</a></td>
                   </tr>
                   <tr>
@@ -56,7 +50,8 @@
                     <td>abc@gmail.com</td>
                     <td>123456789</td>
                     <td>100.00</td>
-                    <td>asdf</td>
+                    <td>pdf</td>
+                    <td>0</td>
                     <td><a href="#">Edit</a></td>
                   </tr>
                   <tr>
@@ -66,7 +61,8 @@
                     <td>abc@gmail.com</td>
                     <td>123456789</td>
                     <td>100.00</td>
-                    <td>asdf</td>
+                    <td>pdf</td>
+                    <td>0</td>
                     <td><a href="#">Edit</a></td>
                   </tr>
                   <tr>
@@ -76,7 +72,8 @@
                     <td>abc@gmail.com</td>
                     <td>123456789</td>
                     <td>100.00</td>
-                    <td>asdf</td>
+                    <td>pdf</td>
+                    <td>0</td>
                     <td><a href="#">Edit</a></td>
                   </tr>
                   <tr>
@@ -86,12 +83,13 @@
                     <td>abc@gmail.com</td>
                     <td>123456789</td>
                     <td>100.00</td>
-                    <td>asdf</td>
+                    <td>pdf</td>
+                    <td>1</td>
                     <td><a href="#">Edit</a></td>
                   </tr>
                 </tbody>
               </table>
-              <!-- End Default Table Example -->
+      
             </div>
           </div>
 
